@@ -86,6 +86,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         String password = request.getAttribute("password").toString();
         int status = HttpServletResponse.SC_UNAUTHORIZED;
         String errorMessage = null;
+
         if (failed instanceof BadCredentialsException) {
             if (!password.equals("password123")) {
                 errorMessage = "Bad credentials ";
